@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOXEN AI | The Evolution of AI Avatar Intelligence</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="auth-ui.css">
+</head>
+
+<body>
+
+    <!-- Sparkle Navigation Bar -->
+    <nav class="sparkle-navbar">
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-item">Home</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#services" class="nav-item">Services</a></li>
+            <li><a href="#contact" class="nav-item">Demo</a></li>
+            <li><a href="#" onclick="voxenOpen()" class="nav-item" style="color: #1E90FF; font-weight: 600;">Sign In</a></li>
+        </ul>
+        <div class="sparkle-indicator"></div>
+    </nav>
+
+    <!-- VOXEN AUTH OVERLAY -->
+    <div id="voxen-auth-overlay" class="voxen-auth-overlay">
+        <div class="voxen-auth-box">
+
+            <h2>Voxen Access</h2>
+
+            <div class="voxen-tabs">
+                <button onclick="voxenShowLogin()">Login</button>
+                <button onclick="voxenShowSignup()">Signup</button>
+            </div>
+
+            <!-- LOGIN -->
+            <div id="voxen-login" class="voxen-form">
+                <input id="voxen-login-email" type="email" placeholder="Email">
+                <input id="voxen-login-password" type="password" placeholder="Password">
+                <button id="voxen-login-btn" class="voxen-btn">Login</button>
+                <p id="voxen-login-msg" style="color: #ff4d4f; font-size: 0.9rem; margin-top: 10px; display: none;"></p>
+            </div>
+
+            <!-- SIGNUP -->
+            <div id="voxen-signup" class="voxen-form hidden">
+                <input id="voxen-signup-name" type="text" placeholder="Name">
+                <input id="voxen-signup-email" type="email" placeholder="Email">
+                <input id="voxen-signup-password" type="password" placeholder="Password">
+                <button id="voxen-signup-btn" class="voxen-btn">Create Account</button>
+                <p id="voxen-signup-msg" style="color: #ff4d4f; font-size: 0.9rem; margin-top: 10px; display: none;"></p>
+            </div>
+            <span class="voxen-close" onclick="voxenClose()">×</span>
+
+        </div>
+    </div>
+
+    <!-- Preloader -->
+    <div class="loader">
+        <div class="loader-text">INITIALIZING VOXEN CORE</div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <!-- 3D Canvas Background Scrolling Sequence -->
+    <div class="canvas-container">
+        <canvas id="hero-lightpass"></canvas>
+    </div>
+
+    <!-- Scroll Content -->
+    <div class="content-overlay">
+
+        <!-- Hero Section -->
+        <section id="home" class="section hero-section">
+            <div class="hero-glass-panel">
+                <h1 class="logo">VOXEN</h1>
+                <p class="tagline">The Evolution of AI Avatar Intelligence</p>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll to Explore</span>
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <!-- About Section (Cascade Slider) -->
+        <section id="about" class="section about-section" style="padding: 0; display: flex; align-items: center; width: 100%; min-height: 100vh;">
+            <div class="cascade-slider_container bg-transparent min-w-[600px]" id="cascade-slider">
+                <div class="cascade-slider_slides">
+                    <div class="cascade-slider_item" data-slide-number="0">
+                        <img src="images/WhatsApp Image 2026-04-03 at 10.03.10 AM.jpeg" alt="Team 1">
+                    </div>
+                    <div class="cascade-slider_item" data-slide-number="1">
+                        <img src="images/WhatsApp Image 2026-04-03 at 10.12.57 AM.jpeg" alt="Team 2">
+                    </div>
+                    <div class="cascade-slider_item" data-slide-number="2">
+                        <img src="images/WhatsApp Image 2026-04-02 at 4.01.53 PM.jpeg" alt="Team 3">
+                    </div>
+                    <div class="cascade-slider_item" data-slide-number="3">
+                        <img src="images/7e4a3bfb-6e1d-4dca-ae63-ecf547daeebc.png" alt="Team 4">
+                    </div>
+                    <div class="cascade-slider_item" data-slide-number="4">
+                        <img src="images/811ceb1a-92fc-457a-88dd-e2c404f78248.png" alt="Team 5">
+                    </div>
+                </div>
+
+                <span class="cascade-slider_arrow cascade-slider_arrow-left" data-action="prev" style="background: rgba(0,0,0,0.3); border-radius: 50%; color: white; padding: 10px;">
+                    <!-- Simple SVG for Arrow Left -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8l-4 4 4 4"/><path d="M16 12H8"/></svg>
+                </span>
+                <span class="cascade-slider_arrow cascade-slider_arrow-right" data-action="next" style="background: rgba(0,0,0,0.3); border-radius: 50%; color: white; padding: 10px;">
+                    <!-- Simple SVG for Arrow Right -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16l4-4-4-4"/><path d="M8 12h8"/></svg>
+                </span>
+            </div>
+        </section>
+
+        <!-- Services Section (Seasonal Hover Cards) -->
+        <section id="services" class="section services-section">
+            <h2 class="section-title">Our Services</h2>
+            <div class="hover-cards-container">
+            
+                <!-- Service Card 1 -->
+                <div class="season-card">
+                    <img src="./images/7e4a3bfb-6e1d-4dca-ae63-ecf547daeebc.png" alt="AI Avatar" class="season-card-bg">
+                    <div class="season-card-overlay"></div>
+                    <div class="season-card-content">
+                        <h2 class="season-card-title">AI Avatar <span>(Digital Twin)</span></h2>
+                        <p class="season-card-desc">Voxen creates a living digital replica of you that thinks, speaks, and acts like you.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="season-card">
+                    <img src="./images/meetings.jpeg" alt="Meetings" class="season-card-bg">
+                    <div class="season-card-overlay"></div>
+                    <div class="season-card-content">
+                        <h2 class="season-card-title">AI-Powered <span>Meetings</span></h2>
+                        <p class="season-card-desc">Voxen attends, summarises, and participates in meetings on your behalf.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="season-card">
+                    <img src="./images/811ceb1a-92fc-457a-88dd-e2c404f78248.png" alt="Knowledge" class="season-card-bg">
+                    <div class="season-card-overlay"></div>
+                    <div class="season-card-content">
+                        <h2 class="season-card-title">Knowledge <span>Management</span></h2>
+                        <p class="season-card-desc">Your twin is fed from your documents, notes, and databases via integrations like Notion, Slack, and Calendar.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Call To Action -->
+        <section id="contact" class="section cta-section">
+            <h2>Experience VOXEN</h2>
+            <p>Join the next generation of artificial consciousness.</p>
+            <button class="cta-btn" onclick="voxenOpen()">Initialize Sequence</button>
+        </section>
+
+    </div>
+
+    <!-- Main Application Logic -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="main.js?v=11"></script>
+    <script src="auth-ui.js"></script>
+</body>
+
+</html>
