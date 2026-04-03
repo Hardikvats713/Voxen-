@@ -411,7 +411,9 @@ canvas {
 
 /* Call To Action */
 .cta-section {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    padding: 4rem 5%;
 }
 
 .cta-section h2 {
@@ -745,4 +747,128 @@ canvas {
     .cascade-slider_slides img {
         max-width: 350px;
     }
+}
+
+/* Interactive Video Card Styles */
+.interactive-video-card {
+    position: relative;
+    width: 95%;
+    max-width: 800px;
+    height: 60vh;
+    min-height: 400px;
+    margin: 2rem auto;
+    border-radius: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 80px rgba(30,144,255,0.06), 0 16px 48px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.04);
+    transition: all 0.3s ease;
+}
+
+.interactive-video-card:hover {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.vid-bg-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.7s ease-out;
+    filter: brightness(0.6);
+}
+
+.interactive-video-card:hover .vid-bg-image {
+    filter: brightness(0.3);
+}
+
+.vid-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+
+.interactive-video-card:hover .vid-bg-video {
+    opacity: 1;
+}
+
+.vid-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+    opacity: 0.7;
+    transition: opacity 0.7s ease;
+}
+
+.interactive-video-card:hover .vid-overlay {
+    opacity: 0.9;
+}
+
+.vid-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem 3rem;
+    z-index: 10;
+    text-align: left;
+}
+
+.vid-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    transition: all 0.5s ease-out;
+}
+
+.vid-desc {
+    font-size: 1.1rem;
+    color: #e5e7eb;
+    max-width: 90%;
+    line-height: 1.6;
+    transition: all 0.5s ease-out 0.1s;
+    transform: translateY(10px);
+    opacity: 0.9;
+}
+
+.interactive-video-card:hover .vid-desc {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.vid-badge {
+    margin-top: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+    transform: translateX(-5px);
+    width: fit-content;
+}
+
+.interactive-video-card:hover .vid-badge {
+    opacity: 1;
+    transform: translateX(0);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.vid-badge .vid-icon {
+    display: inline-block;
 }

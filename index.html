@@ -85,10 +85,6 @@
                 <h1 class="logo">VOXEN</h1>
                 <p class="tagline">The Evolution of AI Avatar Intelligence</p>
             </div>
-            <div class="scroll-indicator">
-                <span>Scroll to Explore</span>
-                <div class="mouse"></div>
-            </div>
         </section>
 
         <!-- About Section (Cascade Slider) -->
@@ -96,7 +92,7 @@
             <div class="cascade-slider_container bg-transparent min-w-[600px]" id="cascade-slider">
                 <div class="cascade-slider_slides">
                     <div class="cascade-slider_item" data-slide-number="0">
-                        <img src="images/WhatsApp Image 2026-04-03 at 10.03.10 AM.jpeg" alt="Team 1">
+                        <img src="images/hardik-founder.jpg" alt="Founder">
                     </div>
                     <div class="cascade-slider_item" data-slide-number="1">
                         <img src="images/WhatsApp Image 2026-04-03 at 10.12.57 AM.jpeg" alt="Team 2">
@@ -161,10 +157,36 @@
             </div>
         </section>
 
-        <!-- Call To Action -->
+        <!-- Call To Action / Demo -->
         <section id="contact" class="section cta-section">
             <h2>Experience VOXEN</h2>
-            <p>Join the next generation of artificial consciousness.</p>
+            <p style="font-size: 1.3rem; background: linear-gradient(90deg, #1E90FF, #00CFFF, #1E90FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; letter-spacing: 0.5px;">Join the next generation of artificial consciousness.</p>
+            <!-- Interactive Hover Video Card -->
+            <div class="interactive-video-card" id="demo-card">
+                <!-- Background Image (Optional Placeholder before hover) -->
+                <div class="vid-bg-image" style="background-image: url('images/811ceb1a-92fc-457a-88dd-e2c404f78248.png');"></div>
+                
+                <!-- Video Background -->
+                <video id="demo-video" class="vid-bg-video" loop playsinline preload="metadata">
+                    <source src="Demo vedio/2026_03_22_15.00.08.mp4" type="video/mp4">
+                </video>
+                
+                <!-- Overlay Gradient -->
+                <div class="vid-overlay"></div>
+                
+                <!-- Content (VOXEN Title over video) -->
+                <div class="vid-content">
+                    <h2 class="vid-title">VOXEN</h2>
+                    <p class="vid-desc">Hover to reveal the interactive digital twin preview.</p>
+                    
+                    <!-- Hover Indicator Badge -->
+                    <div class="vid-badge" id="vid-badge">
+                        <svg class="vid-icon play-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        <svg class="vid-icon pause-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="display: none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                        <span id="vid-status">Hover to Preview</span>
+                    </div>
+                </div>
+            </div>
             <button class="cta-btn" onclick="voxenOpen()">Initialize Sequence</button>
         </section>
 

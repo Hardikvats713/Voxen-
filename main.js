@@ -319,4 +319,29 @@ function initAnimations() {
         cascadeContainer.addEventListener('touchstart', (e) => handleStart(e.touches[0].clientX), {passive: true});
         window.addEventListener('touchend', (e) => handleEnd(e.changedTouches[0].clientX));
     }
+
+    // Video Card Interactive Logic
+    const demoCard = document.getElementById('demo-card');
+    const demoVideo = document.getElementById('demo-video');
+    const playIcon = document.querySelector('.play-icon');
+    const pauseIcon = document.querySelector('.pause-icon');
+    const vidStatus = document.getElementById('vid-status');
+
+    if(demoCard && demoVideo) {
+        demoCard.addEventListener('mouseenter', () => {
+            demoVideo.play().catch(err => console.log('Video play failed:', err));
+            if(playIcon) playIcon.style.display = 'none';
+            if(pauseIcon) pauseIcon.style.display = 'inline-block';
+            if(vidStatus) vidStatus.textContent = 'Playing Preview';
+        });
+
+        demoCard.addEventListener('mouseleave', () => {
+            demoVideo.pause();
+            // Optional: Uncomment below line to reset video to start when mouse leaves
+            // demoVideo.currentTime = 0; 
+            if(playIcon) playIcon.style.display = 'inline-block';
+            if(pauseIcon) pauseIcon.style.display = 'none';
+            if(vidStatus) vidStatus.textContent = 'Hover to Preview';
+        });
+    }
 }
