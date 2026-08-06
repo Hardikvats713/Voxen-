@@ -218,7 +218,7 @@ Voxen can be used for:
 
 ---
 
-# 🛣 Roadmap
+#  Roadmap
 
 ### Phase 1
 
